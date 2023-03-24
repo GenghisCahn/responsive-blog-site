@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    background: #FAFAFA;
 }
 
 .hero-container {
@@ -16,13 +17,17 @@ body {
 }
 
 .blog-container {
-     background: #FAFAFA;
      display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: 1em;
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+     gap: 2em;
      padding: 1em;
 }
 
+.max-container {
+    background: #FAFAFA;
+    max-width: 1338px;
+    margin: auto;
+}
 
 
 /** nav section **/
@@ -64,12 +69,10 @@ ul {
     padding: 1.25em;
 }
 
-/** typography **/
-
 h1, p {
     margin: 0.25em 0;
 }
-
+    
 h1 {
     font-weight: 700;
     font-size: 2rem;
@@ -90,7 +93,6 @@ p {
 .blog-img {
     width: 100%;
 }
-
 
 /** media queries **/
 
@@ -123,9 +125,8 @@ p {
     }
     
     .blog-container {
-     
      padding: 3.125em;
-}
+    }
 }
 
 @media (min-width: 1200px){
