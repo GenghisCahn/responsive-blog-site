@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    background: #FAFAFA;
+    background: #000000;
 }
 
 .hero-container {
@@ -29,7 +29,6 @@ body {
     margin: auto;
 }
 
-
 /** nav section **/
 
 .logo {
@@ -52,10 +51,20 @@ ul {
     font-size: 0.75rem;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    font-weight: 700;
+}
+
 /** hero section **/
 
 .hero-img {
-    background-image: url('images/hero-image.png');
+    background-image: url('images/hero-bg.png');
     background-size: cover;
     height: 300px;
     padding: 1.25em;
@@ -94,9 +103,48 @@ p {
     width: 100%;
 }
 
+/** about-me page **/
+
+.profile-img {
+    border-radius: 50%;
+    width: 100%;
+    padding: 1em; 
+    grid-area: img;
+    margin-top: 1em;
+}
+
+.about-me-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "logo nav"
+        "img ."
+        "intro intro"
+        "body body"    
+}
+
+.intro {
+    grid-area: intro;
+    padding: 1em;
+}
+
+.intro h1 {
+    margin-bottom: 0.5em;
+}
+
+.body {
+    grid-area: body;
+    padding: 1em;
+}
+
+.body p {
+    margin-bottom: 1em;
+}
+
+
 /** media queries **/
 
-@media (min-width: 700px){
+@media (min-width: 768px){
     
     .logo, ul {
         padding: 1.5em 3.125em;
@@ -127,15 +175,37 @@ p {
     .blog-container {
      padding: 3.125em;
     }
+    
+    .about-me-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "logo . . nav"
+        "img intro intro intro"
+        "body body body body" 
+    }
+    
+    .body {
+        padding: 0 8em
+    }
+    
+    .intro {
+        padding: 3em;
+        margin-left: 3em;
+        align-self: center;
+    }
+    
+    .profile-img {
+        padding: 3em;
+    }
+    
+    ul {
+        min-width: 150px;
+    }
 }
 
 @media (min-width: 1200px){
     
     .hero-img {
     height: 100vh;
-    }
-    
-    .hero-text {
-        grid-column: 1 / 2;
-    }
+    } 
 }
