@@ -26,6 +26,7 @@ body {
 .max-container {
     background: #FAFAFA;
     max-width: 1338px;
+    min-width: 380px;
     margin: auto;
 }
 
